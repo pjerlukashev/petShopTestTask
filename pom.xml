@@ -8,10 +8,32 @@
     <artifactId>petShopTestTask</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+<properties>
+    <spring.version>4.3.21.RELEASE</spring.version>
+    <postgresql.version>42.2.5</postgresql.version>
+</properties>
 
 
+    <dependencies>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
 
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.0</version>
+        </dependency>
+
+</dependencies>
 
 
 </project>
