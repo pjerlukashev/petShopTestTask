@@ -1,0 +1,26 @@
+<!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lukashev.petshoptesttask.CarMapper">
+
+
+    <select id="getCarById" parameterType="java.lang.Integer"  resultType="lukashev.petshoptesttask.Car">
+        select * from Cars where id = #{id}
+    </select>
+
+    <select id="getAllCars"  resultType="lukashev.petshoptesttask.Car">
+        select * from cars
+    </select>
+
+    <insert id="insertCar" parameterType="lukashev.petshoptesttask.Car">
+        INSERT INTO cars
+                (id, person_id, model, speed)
+        VALUES (#{id}, #{person.id},#{model},#{speed})
+    </insert>
+
+    <delete id="deleteCarById" parameterType="java.lang.Integer">
+        DELETE FROM cars where id = #{id}
+    </delete>
+    <update id="updateCar" parameterType="lukashev.petshoptesttask.Car">
+        UPDATE cars SET model= #{model}, speed=#{speed} WHERE id=#{id}
+    </update>
+
+</mapper>
