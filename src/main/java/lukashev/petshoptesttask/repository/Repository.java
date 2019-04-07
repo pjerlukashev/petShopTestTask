@@ -1,5 +1,7 @@
-package lukashev.petshoptesttask;
+package lukashev.petshoptesttask.repository;
 
+import lukashev.petshoptesttask.Car;
+import lukashev.petshoptesttask.Person;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

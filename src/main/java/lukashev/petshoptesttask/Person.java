@@ -1,14 +1,18 @@
 package lukashev.petshoptesttask;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 public class Person {
+
 
     private Integer id;
 
     private String name;
 
     private String email;
+
 
     private List<Car> cars;
 

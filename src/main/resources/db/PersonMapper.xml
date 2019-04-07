@@ -5,13 +5,20 @@
         <id property="id" column="id"/>
         <result property="name" column="name"/>
         <result property="email" column="email"/>
+        <collection
+                property="cars"
+        column="id"
+        javaType="List"
+        ofType="Car"
+        select="lukashev.petshoptesttask.CarMapper.getCarsByPersonId"
+        fetchType="eager" />
     </resultMap>
 
-    <select id="getPersonById" parameterType="java.lang.Integer" resultType="lukashev.petshoptesttask.Person" >
+    <select id="getPersonById"  parameterType="java.lang.Integer" resultMap="person" >
     select * from persons where id = #{id}
 </select>
 
-<select id="getAllPersons" resultType="lukashev.petshoptesttask.Person">
+<select id="getAllPersons" resultMap="person">
 select * from persons
 </select>
 
@@ -24,7 +31,7 @@ select * from persons
     <delete id="deletePersonById" parameterType="java.lang.Integer">
         DELETE FROM persons where id = #{id}
     </delete>
-    <update id="updatePerson" parameterType="lukashev.petshoptesttask.Person">
+    <update id="updatePerson"  parameterType="lukashev.petshoptesttask.Person">
         UPDATE persons SET name= #{name}, email=#{email} WHERE id=#{id}
     </update>
 

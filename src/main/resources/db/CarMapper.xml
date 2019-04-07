@@ -23,4 +23,7 @@
         UPDATE cars SET model= #{model}, speed=#{speed} WHERE id=#{id}
     </update>
 
+    <select id="getCarsByPersonId" resultType="lukashev.petshoptesttask.Car" parameterType="java.lang.Integer">
+        select * from cars where person_id = #{id}
+    </select>
 </mapper>
